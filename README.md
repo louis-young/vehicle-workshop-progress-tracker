@@ -2,7 +2,7 @@
 
 Full-stack garage progress tracker written in React with a Node/Express back-end.
 
-## What is it?
+## What?
 
 Garageline is a progress tracker for garages. It allows customers to visit a customer portal, enter their vehicle registration and find out information about the status and progress on their vehicle.
 
@@ -16,9 +16,9 @@ I plan on adding features such as:
 
 - Push notifications on completion/update
 
-## Motivation
+## Why?
 
-This application is designed to prevent using human hours to give customers updates on their vehicle, and to automate some of the processes.
+This application is designed to prevent using human hours to give customers updates on their vehicle, and to automate some of the process.
 
 ## Stack
 

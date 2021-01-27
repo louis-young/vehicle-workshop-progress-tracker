@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 import customers from "./routes/customers/customers.js";
 import vehicles from "./routes/vehicles/vehicles.js";
+import updates from "./routes/updates/updates.js";
 
 dotenv.config();
 
@@ -41,3 +42,5 @@ mongoose.connect(
 app.use("/customers", customers);
 
 app.use("/vehicles", vehicles);
+
+app.use("/updates", updates);

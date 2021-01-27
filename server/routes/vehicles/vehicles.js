@@ -19,7 +19,7 @@ router.post("/create", async (request, response) => {
     }
 
     const vehicle = new Vehicle({
-      registration: registration.trim(),
+      registration: registration.trim().toUpperCase(),
       colour,
     });
 
@@ -31,9 +31,9 @@ router.post("/create", async (request, response) => {
   }
 });
 
-router.post("/search", async (request, response) => {
+router.get("/search", async (request, response) => {
   try {
-    const { registration } = request.body;
+    const { registration } = request.query;
 
     if (!registration) {
       return response.status(400).json({ message: "Please provide a registration." });

@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import customers from "./routes/customers/customers.js";
+import vehicles from "./routes/vehicles/vehicles.js";
 
 dotenv.config();
 
@@ -38,3 +39,5 @@ mongoose.connect(
 );
 
 app.use("/customers", customers);
+
+app.use("/vehicles", vehicles);

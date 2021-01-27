@@ -14,7 +14,7 @@ const App = () => {
     try {
       const formattedRegistration = formatRegistration(registration);
 
-      const url = `http://localhost:5000/vehicles/search?registration=${formattedRegistration}`;
+      const url = `http://localhost:5000/vehicles/search/${formattedRegistration}`;
 
       const response = await fetch(url);
 

@@ -31,9 +31,9 @@ router.post("/create", async (request, response) => {
   }
 });
 
-router.get("/search", async (request, response) => {
+router.get("/search/:registration", async (request, response) => {
   try {
-    const { registration } = request.query;
+    const { registration } = request.params;
 
     if (!registration) {
       return response.status(400).json({ message: "Please provide a registration." });

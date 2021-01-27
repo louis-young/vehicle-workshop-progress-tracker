@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import clients from "./routes/clients/clients.js";
+import customers from "./routes/customers/customers.js";
 
 dotenv.config();
 
@@ -37,4 +37,4 @@ mongoose.connect(
   }
 );
 
-app.use("/clients", clients);
+app.use("/customers", customers);

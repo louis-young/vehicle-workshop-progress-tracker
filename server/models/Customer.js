@@ -5,6 +5,6 @@ const schema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
 });
 
-const model = mongoose.model("Client", schema);
+const model = mongoose.model("Customer", schema);
 
 export default model;

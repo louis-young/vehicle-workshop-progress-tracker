@@ -1,6 +1,6 @@
 import express from "express";
 
-import Client from "../../models/Client.js";
+import Customer from "../../models/Customer.js";
 
 const router = express.Router();
 
@@ -12,20 +12,20 @@ router.post("/create", async (request, response) => {
       return response.status(400).json({ message: "Please fill in all fields." });
     }
 
-    const existingClient = await Client.findOne({ email });
+    const existingCustomer = await Customer.findOne({ email });
 
-    if (existingClient) {
-      return response.status(400).json({ message: "A client with this email address already exists." });
+    if (existingCustomer) {
+      return response.status(400).json({ message: "A customer with this email address already exists." });
     }
 
-    const client = new Client({
+    const customer = new Customer({
       name,
       email,
     });
 
-    const savedClient = await client.save();
+    const savedCustomer = await customer.save();
 
-    response.json(savedClient);
+    response.json(savedCustomer);
   } catch (error) {
     response.status(500).json({ error: error.message });
   }

@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const schema = new mongoose.Schema({
   status: { type: String, required: true },
   technician: { type: String },
+  action: { type: String },
   vehicle: { type: String, required: true },
 });
 

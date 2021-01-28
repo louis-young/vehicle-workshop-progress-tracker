@@ -1,42 +1,19 @@
 import React, { useState } from "react";
+
+import { fetchUpdates, fetchVehicle } from "./api/api";
+
 import Search from "./components/Search/Search";
-
-const formatRegistration = (registration) => {
-  const formattedRegistration = registration.replace(/ /g, "").toUpperCase();
-
-  return formattedRegistration;
-};
+import Updates from "./components/Updates/Updates";
+import Vehicle from "./components/Vehicle/Vehicle";
+import useVehicle from "./hooks/useVehicle";
 
 const App = () => {
-  const [vehicle, setVehicle] = useState({});
-
   const [updates, setUpdates] = useState([]);
-
-  const search = async (registration) => {
-    try {
-      const formattedRegistration = formatRegistration(registration);
-
-      const url = `http://localhost:5000/vehicles/search/${formattedRegistration}`;
-
-      const response = await fetch(url);
-
-      const vehicle = await response.json();
-
-      setVehicle(vehicle);
-
-      getUpdates(vehicle._id);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const [registration, setRegistration] = useState(null);
 
   const getUpdates = async (vehicle) => {
     try {
-      const url = `http://localhost:5000/updates/${vehicle}`;
-
-      const response = await fetch(url);
-
-      const updates = await response.json();
+      const updates = await fetchUpdates(vehicle);
 
       setUpdates(updates.updates);
     } catch (error) {
@@ -44,22 +21,15 @@ const App = () => {
     }
   };
 
-  console.log(updates);
-
   return (
     <>
       <h1>Garageline</h1>
-      <Search search={search} />
 
-      <p>{vehicle.registration}</p>
-      <p>{vehicle.colour}</p>
+      <Search setRegistration={setRegistration} />
 
-      {updates.map(({ status, technician }) => (
-        <li>
-          <p>Status: {status}</p>
-          {technician && <p>Technician: {technician}</p>}
-        </li>
-      ))}
+      <Vehicle registration={registration} />
+
+      <Updates updates={updates} />
     </>
   );
 };

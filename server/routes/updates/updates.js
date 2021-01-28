@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/create", async (request, response) => {
   try {
-    const { status, technician, id } = request.body;
+    const { status, technician, action, id } = request.body;
 
     if (!status || !id) {
       return response.status(400).json({ message: "Please provide a status and vehicle ID." });
@@ -21,6 +21,7 @@ router.post("/create", async (request, response) => {
     const update = new Update({
       status,
       technician,
+      action,
       vehicle: id,
     });
 

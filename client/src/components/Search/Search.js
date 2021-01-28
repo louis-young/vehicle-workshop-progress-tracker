@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 
-const Search = ({ search }) => {
-  const [registration, setRegistration] = useState("");
+const Search = ({ setRegistration }) => {
+  const [value, setValue] = useState("");
 
   const submit = (event) => {
     event.preventDefault();
 
-    search(registration);
+    setRegistration(value);
   };
 
   return (
     <form onSubmit={submit}>
-      <input
-        type="text"
-        name="registration"
-        value={registration}
-        onChange={(event) => setRegistration(event.target.value)}
-      />
+      <input type="text" name="registration" value={value} onChange={(event) => setValue(event.target.value)} />
 
       <button type="submit">Search</button>
     </form>

@@ -43,10 +43,6 @@ router.get("/:id", async (request, response) => {
 
     const updates = await Update.find({ vehicle: id });
 
-    if (!updates.length) {
-      return response.status(400).json({ message: "No updates found." });
-    }
-
     response.json(updates);
   } catch (error) {
     response.status(500).json({ error: error.message });

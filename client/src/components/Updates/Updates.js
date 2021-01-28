@@ -13,7 +13,7 @@ const Updates = ({ vehicle }) => {
     return <p>Error loading updates.</p>;
   }
 
-  if (vehicle && !updates) {
+  if (vehicle && !updates.length) {
     return <p>No updates.</p>;
   }
 

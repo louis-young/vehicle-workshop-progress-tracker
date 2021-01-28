@@ -1,7 +1,5 @@
 import React from "react";
 
-import useVehicle from "../../hooks/useVehicle";
-
 const Vehicle = ({ vehicle }) => {
   const { registration, make, model, colour, fuel, engine } = vehicle;
 

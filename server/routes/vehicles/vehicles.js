@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.post("/create", async (request, response) => {
   try {
-    const { registration, colour } = request.body;
+    const { registration, make, model, colour, fuel, engine } = request.body;
 
-    if (!registration || !colour) {
+    if (!registration || !make || !model || !colour || !fuel || !engine) {
       return response.status(400).json({ message: "Please fill in all fields." });
     }
 
@@ -20,7 +20,11 @@ router.post("/create", async (request, response) => {
 
     const vehicle = new Vehicle({
       registration: registration.trim().toUpperCase(),
+      make,
+      model,
       colour,
+      fuel,
+      engine,
     });
 
     const savedVehicle = await vehicle.save();

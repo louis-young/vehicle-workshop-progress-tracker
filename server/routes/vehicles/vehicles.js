@@ -1,10 +1,10 @@
-import express from "express";
+import { Router } from "express";
 
 import Vehicle from "../../models/Vehicle.js";
 
-const router = express.Router();
+const router = Router();
 
-router.post("/create", async (request, response) => {
+router.post("/add", async (request, response) => {
   try {
     const { registration, make, model, colour, fuel, engine } = request.body;
 

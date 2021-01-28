@@ -1,10 +1,10 @@
-import express from "express";
+import { Router } from "express";
 
 import Update from "../../models/Update.js";
 
-const router = express.Router();
+const router = Router();
 
-router.post("/create", async (request, response) => {
+router.post("/add", async (request, response) => {
   try {
     const { status, technician, action, id } = request.body;
 

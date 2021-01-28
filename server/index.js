@@ -35,7 +35,7 @@ mongoose.connect(
   (error) => {
     if (error) throw new Error(error);
 
-    console.log("MongoDB connection established.");
+    console.log("Database connection established.");
   }
 );
 

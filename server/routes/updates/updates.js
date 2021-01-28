@@ -47,7 +47,7 @@ router.get("/:id", async (request, response) => {
       return response.status(400).json({ message: "No updates found." });
     }
 
-    response.json({ updates });
+    response.json(updates);
   } catch (error) {
     response.status(500).json({ error: error.message });
   }

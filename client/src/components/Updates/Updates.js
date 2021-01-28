@@ -1,6 +1,22 @@
 import React from "react";
 
-const Updates = ({ updates }) => {
+import useUpdates from "../../hooks/useUpdates";
+
+const Updates = ({ vehicle }) => {
+  const { loading, error, updates } = useUpdates(vehicle._id);
+
+  if (loading) {
+    return <p>Loading updates...</p>;
+  }
+
+  if (error) {
+    return <p>Error loading updates.</p>;
+  }
+
+  if (vehicle && !updates) {
+    return <p>No updates.</p>;
+  }
+
   return (
     <ul>
       {updates &&

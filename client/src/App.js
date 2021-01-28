@@ -1,25 +1,22 @@
 import React, { useState } from "react";
 
-import { fetchUpdates, fetchVehicle } from "./api/api";
-
 import Search from "./components/Search/Search";
 import Updates from "./components/Updates/Updates";
 import Vehicle from "./components/Vehicle/Vehicle";
 import useVehicle from "./hooks/useVehicle";
 
 const App = () => {
-  const [updates, setUpdates] = useState([]);
   const [registration, setRegistration] = useState(null);
 
-  const getUpdates = async (vehicle) => {
-    try {
-      const updates = await fetchUpdates(vehicle);
+  const { loading, error, vehicle } = useVehicle(registration);
 
-      setUpdates(updates.updates);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  if (loading) {
+    return <p>Loading vehicle...</p>;
+  }
+
+  if (error) {
+    return <p>Error loading vehicle.</p>;
+  }
 
   return (
     <>
@@ -27,9 +24,9 @@ const App = () => {
 
       <Search setRegistration={setRegistration} />
 
-      <Vehicle registration={registration} />
+      <Vehicle vehicle={vehicle} />
 
-      <Updates updates={updates} />
+      <Updates vehicle={vehicle} />
     </>
   );
 };

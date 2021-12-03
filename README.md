@@ -1,6 +1,6 @@
 # Garageline
 
-Full-stack garage progress tracker written in React with a Node/Express back-end.
+Full-stack garage progress tracker - built with React with a Node/Express back-end.
 
 ## Description
 

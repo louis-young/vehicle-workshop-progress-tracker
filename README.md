@@ -22,12 +22,12 @@ This project is designed to automate parts of the process and save human hours t
 
 ## Technologies
 
-### Front-end
+#### Front-end
 
 - React.
 - Sass (BEM).
 
-### Back-end
+#### Back-end
 
 - Node.
 - Express.

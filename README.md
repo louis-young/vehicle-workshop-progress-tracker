@@ -1,31 +1,31 @@
-# Garageline
+# Vehicle Workshop Progress Tracker
 
-Full-stack garage progress tracker - built with React with a Node/Express back-end.
+A full-stack vehicle workshop progress tracker.
 
 ## Description
 
-Garageline is a progress tracker for garages. It allows customers to visit a customer portal, enter their vehicle registration and find out information about the status and progress on their vehicle.
+A full-stack vehicle workshop progress tracker that enables customers to access a portal where they can enter their vehicle registration and get instant information about the status and progress of the work being carried out on their vehicle.
 
-This allows the client to see things such as:
+The client can see things such as:
 
-- Status of work (waiting, in the workshop, completed, etc)
-- Assigned technician (for example, "John is working on your vehicle")
-- Unforeseen issues (such as "We noticed your brake pads need replacing")
+- The status of the work being carried out (waiting, in the workshop, completed, etc).
+- The assigned technician (for example, "John is working on your vehicle.").
+- Any unforeseen issues (such as "The technician has recommended that your front brake pads need replacing.").
 
-I plan on adding features such as:
+Additional features will include things such as:
 
-- Push notifications on completion/update
+- Push notifications when there is up an update or when the car is ready for collection.
 
 ## Motivation
 
-This application is designed to prevent using human hours to give customers updates on their vehicle, and to automate some of the process.
+This project is designed to automate parts of the process and save human hours that receptionists and service advisors spend updating customers on the status of  and any updates on their vehicle.
 
-## Stack
+## Technologies
 
 Front-end:
 
 - React
-- Sass (BEM)
+- Sass (with BEM)
 
 Back-end:
 

@@ -25,7 +25,7 @@ This project is designed to automate parts of the process and save human hours t
 Front-end:
 
 - React.
-- Sass (with BEM).
+- Sass (BEM).
 
 Back-end:
 

@@ -24,11 +24,13 @@ This project is designed to automate parts of the process and save human hours t
 
 #### Front-end
 
+- JavaScript.
 - React.
 - Sass (BEM).
 
 #### Back-end
 
+- JavaScript.
 - Node.
 - Express.
 - MongoDB.

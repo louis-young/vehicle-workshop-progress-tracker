@@ -32,4 +32,3 @@ Back-end:
 - Node.
 - Express.
 - MongoDB.
-- 
